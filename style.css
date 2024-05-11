@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
 body {
 	margin: 0;
 	padding: 0;
@@ -13,7 +15,7 @@ body {
 .inner {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
+	grid-template-rows: 300px 300px 300px;
 }
 
 .img {
@@ -22,6 +24,12 @@ body {
 
 .item {
 	text-align: center;
+}
+
+.productItem{
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Ubuntu Sans', sans-serif;
 }
 
 .btn {
