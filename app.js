@@ -6,7 +6,6 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
 let items = [];
-let sendOrder = false;
 
 function toggleItem(btn, itemId, price) {
     let item = items.find(i => i.id === itemId);
@@ -42,14 +41,11 @@ function calculateTotalPrice() {
 }
 
 Telegram.WebApp.onEvent('mainButtonClicked', () => {
-    if (items.length > 0 && sendOrder) {
-        let data = {
-            items: items,
-            totalPrice: calculateTotalPrice()
-        }
-        tg.sendData(JSON.stringify(data));
-        sendOrder = false;
+    let data = {
+        items: items,
+        totalPrice: calculateTotalPrice()
     }
+    tg.sendData(JSON.stringify(data));
 });
 
 let btn1 = document.getElementById('btn1');
@@ -61,30 +57,24 @@ let btn6 = document.getElementById('btn6');
 
 btn1.addEventListener('click', () => {
     toggleItem(btn1, "item1", 1000);
-    sendOrder = true;
 })
 
 btn2.addEventListener('click', () => {
     toggleItem(btn2, "item2", 2000);
-    sendOrder = true;
 })
 
 btn3.addEventListener('click', () => {
     toggleItem(btn3, "item3", 3000);
-    sendOrder = true;
 })
 
 btn4.addEventListener('click', () => {
     toggleItem(btn4, "item4", 4000);
-    sendOrder = true;
 })
 
 btn5.addEventListener('click', () => {
     toggleItem(btn5, "item5", 5000);
-    sendOrder = true;
 })
 
 btn6.addEventListener('click', () => {
     toggleItem(btn6, "item6", 6000);
-    sendOrder = true;
 })
