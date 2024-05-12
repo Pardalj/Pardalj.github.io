@@ -16,15 +16,15 @@ function toggleItem(btn, itemId, price) {
             id: itemId,
             price: price
         }
-    }
-    items.push(newItem);
-    btn.classList.toggle('added-to-cart');
-    btn.innerText = 'Delete';
-    let total = items.reduce((acc, item) => acc + item.price, 0);
-    if (total > 0) {
-        tg.MainButton.setText('Total: ' + total);
-        if (!tg.MainButton.isVisible) {
-            tg.MainButton.show();
+        items.push(newItem);
+        btn.classList.toggle('added-to-cart');
+        btn.innerText = 'Delete';
+        let total = items.reduce((acc, item) => acc + item.price, 0);
+        if (total > 0) {
+            tg.MainButton.setText('Total: ' + total);
+            if (!tg.MainButton.isVisible) {
+                tg.MainButton.show();
+            }
         } else {
             tg.MainButton.hide();
         }
