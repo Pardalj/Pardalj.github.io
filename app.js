@@ -7,8 +7,6 @@ tg.MainButton.color = '#2cab37';
 
 let items = [];
 
-let btn = document.getElementsByClassName('btn');
-
 function toggleItem(btn, itemId, price) {
     let item = items.find(i => i.id === itemId);
     if (!item) {
